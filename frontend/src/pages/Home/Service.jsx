@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const serviceList = [
   {
     id: 1,
-    title: "High Quality Products",
-    description: "We offer top-quality products for tech enthusiasts.",
-    image: "/images/home/services/fast-delivery.png",
+    title: "High-Quality Products",
+    description: "We offer a curated selection of high-quality products",
+    image: "/images/home/services/assurance.png",
   },
   {
     id: 2,
     title: "Fast Delivery",
-    description: "Your orders delivered quickly to your doorstep.",
+    description: "We deliver your order promptly to your door",
     image: "/images/home/services/fast-delivery.png",
   },
   {
     id: 3,
-    title: "Great Customer Support",
-    description: "Always here to assist you with any inquiries.",
-    image: "/images/home/services/fast-delivery.png",
+    title: "Online Ordering",
+    description: "Explore products & order with ease using our Online Ordering",
+    image: "/images/home/services/order.png",
   },
   {
     id: 4,
-    title: "Affordable Prices",
-    description: "High-quality products at competitive prices.",
-    image: "/images/home/services/fast-delivery.png",
+    title: "Gift Cards",
+    description: "Give the gift of exceptional dining with SE Shop Gift Cards",
+    image: "/images/home/services/gift.png",
   },
 ];
 
@@ -36,36 +36,32 @@ const Service = () => {
         <div className="md:w-1/2">
           <div className="text-left md:w-4/5">
             <p className="subtitle">Our Story & Services</p>
-            <h2 className="title my-5 text-secondary leading-[30px]">
-              Our Journey and Services
-            </h2>
-            <p>
-              We provide a curated selection of high-quality tech-inspired
-              products, backed by fast shipping and exceptional customer
-              service. Our mission is to empower and inspire tech enthusiasts
-              through our carefully chosen merchandise and community engagement
-              initiatives.
+            <h2 className="title">Our Journey And Services</h2>
+            <p className="my-5 text-secondary leading-[30px]">
+              "As a software developer, I'm always on the lookout for unique
+              accessories to express my love for coding. The Keyboard Key
+              Keychain is not only stylish but also durable. Will definitely be
+              purchasing more items!"
             </p>
-            <button className="btn bg-red font-semibold text-white px-8 py-3 rounded-full">
+            <a
+              className="btn bg-red px-8 py-3 font-semibold text-white rounded-full"
+              href="/shop"
+            >
               Explore
-            </button>
+            </a>
           </div>
         </div>
-
         <div className="md:w-1/2">
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 item-center">
+          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
             {myServices.length > 0 &&
-              myServices.map((service) => (
-                <div key={service.id} className="shadow-md rounded p-4">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-32 object-cover rounded"
-                  />
-                  <h3 className="text-lg font-semibold mt-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
+              myServices.map((item) => (
+                <div
+                  key={item.id}
+                  className="shadow-lg rounded-lg py-6 px-6 text-center space-y-4 bg-white hover:bg-indigo-50 text-red-600 cursor-pointer hover:scale-105 transform transition-all duration-300 ease-in-out border-2 border-transparent hover:border-indigo-500"
+                >
+                  <img src={item.image} alt="" className="mx-auto h-16" />
+                  <h5 className="font-semibold">{item.title}</h5>
+                  <p className="text-secondary">{item.description}</p>
                 </div>
               ))}
           </div>
